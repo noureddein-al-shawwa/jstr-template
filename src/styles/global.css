@@ -71,7 +71,7 @@ button:active {
 }
 
 .card {
-  @apply h-[470px] border bg-white/5 justify-between p-7 flex flex-col items-start rounded-3xl md:w-[348px] w-full backdrop-blur-[4rem] border-white/10;
+  @apply h-[470px] border bg-white/5 justify-between px-7 py-11 flex flex-col items-start rounded-3xl md:w-[348px] w-full backdrop-blur-[4rem] border-white/10;
 }
 
 .card.best-deal {
