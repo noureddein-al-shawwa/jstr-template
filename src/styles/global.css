@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+:root {
+  /* change this variable if you want a different background image color. */
+  --bg-color: #967300;
+}
+
+.bg-image-color-hue {
+  @apply w-screen absolute h-screen bg-[var(--primary-color)] mix-blend-hue;
+}
+
+button {
+  cursor: pointer;
+  user-select: none;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:active {
+  opacity: 0.7;
+}
+
+.nav-container {
+  @apply flex flex-col items-center justify-center;
+}
+
+.nav {
+  @apply fixed max-xl:px-5 flex items-center w-screen h-[48px] max-w-[1662px] top-5 z-[5];
+}
+
+.nav-c-container {
+  @apply relative z-[1] flex flex-row w-full items-center justify-between pl-[.358vw] text-[0.833vw] pr-[1.042vw] max-md:pr-[30px];
+}
+
+.nav-content {
+  @apply flex flex-row items-center gap-x-[8vw];
+}
+
+.nav-links {
+  @apply flex flex-row gap-x-[1.458vw] max-md:hidden;
+}
+
+.pricing-page {
+  @apply flex items-start justify-center relative h-fit;
+}
+
+.pricing-page .container {
+  @apply h-fit max-xl:px-5 w-full max-w-[1660px] pt-11 max-md:pt-[300px] flex flex-wrap items-center justify-between relative mt-[2.5vw] gap-y-11;
+}
+
+.pricing-page .hero {
+  @apply flex flex-col items-start xl:w-min gap-y-5;
+}
+
+.pricing-page .hero-title {
+  @apply font-bold md:text-[3vw] text-[7vw];
+}
+
+.pricing-page .hero-desc {
+  @apply opacity-50 text-[18px] leading-tight;
+}
+
+.cards-container {
+  @apply flex flex-col items-center justify-center gap-y-7 h-auto;
+}
+
+.wrap-cards {
+  @apply flex flex-wrap items-end w-full gap-y-11 gap-x-5 h-auto;
+}
+
+.card {
+  @apply h-[470px] border bg-white/5 justify-between p-7 flex flex-col items-start rounded-3xl md:w-[348px] w-full backdrop-blur-[4rem] border-white/10;
+}
+
+.card.best-deal {
+  @apply h-[526px] border-[#FFC056]/20;
+}
+
+.last-card {
+  @apply w-full relative min-h-[209px] rounded-3xl max-md:bg-gradient-to-tr from-yellow-500/30 to-yellow-200/20
+}
+
+.last-card .content {
+  @apply w-full relative z-[1] h-full pt-11 pb-7 px-16 flex flex-wrap items-start justify-between
+}
+
+.feature-list {
+  @apply flex flex-col gap-y-3;
+}
+
+.feature {
+  @apply flex items-center flex-row gap-x-3 text-[14px];
+}
+
+.btn {
+  @apply w-full h-[45px] border overflow-hidden border-white/10 rounded-full bg-white/5 relative flex items-center justify-center;
+}
+
+.btn-small {
+  @apply px-5 py-2 bg-yellow-500/10 rounded-full text-sm flex items-center flex-row gap-x-5;
+}
+
+.btn.secondary {
+  @apply bg-white text-black;
+}
+.btn.last-c {
+  @apply w-[245px] bg-white text-black;
+}
+.best-deal .btn {
+  @apply bg-[#967300];
+}
+
+.last-c-btn-wrap {
+  @apply py-7 flex flex-col items-center justify-center gap-y-7 -ml-[50px]
+}
+
+.btn-blur {
+  @apply w-[50%] mx-auto blur-xl h-full absolute inset-0 rounded-full bg-white/30;
+}
+
+.best-deal-wrap {
+  @apply flex flex-col max-md:w-full gap-y-11 items-center justify-start relative;
+}
+
+.best-deal-badge {
+  @apply absolute text-[11px] text-black flex items-center justify-center font-black top-[-10px] right-0 left-0 mx-auto rounded-full w-[122px] h-[22px] bg-gradient-to-r from-[#FFC056] via-[#FED48D] to-[#FFA100];
+}
+
+.prd-select-btn {
+  @apply w-[204px] h-[47px] text-[14px] border border-white/10 bg-white/10 rounded-full flex flex-row justify-between relative overflow-hidden;
+}
+
+.prd-select-btn .monthly {
+  @apply w-[50%] rounded-r-full bg-[#967300] flex items-center justify-center;
+}
+
+.prd-select-btn .annually {
+  @apply w-[50%] rounded-l-full flex items-center justify-center;
+}
+
+.loading {
+  clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
+  transition: 1s cubic-bezier(0.7, 0, 0, 1) !important;
+  transition-property: transform opacity;
+  @apply fixed w-screen h-dvh bg-yellow-500/20 backdrop-blur-[100px] z-[100] flex items-center p-11 justify-center leading-none;
+}
+
+.loading.active {
+  clip-path: polygon(150% 0, 100% 0, 100% 100%, 100% 100%);
+  display: hidden !important;
+}

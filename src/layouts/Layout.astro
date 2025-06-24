@@ -1,0 +1,80 @@
+---
+import Header from "../components/Header.astro";
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Jester Template</title>
+  </head>
+  <body>
+    <div class="loading" id="loading-screen">
+      <div class="flex flex-col items-center">
+        <div
+          class="jstr-intro-text font-thin italic"
+          style="font-size: clamp(16px, 1vw, 20vw);"
+          dir="ltr"
+        >
+          <span class="font-black text-white not-italic">JSTR</span>TEMPLATE
+        </div>
+        {
+          /*
+        <div class="text-xs opacity-50 mt-5">
+          By <a href="https://noureddein.com/" target="_blank"
+            >Noureddein Al-Shawwa</a>
+        </div>
+			*/
+        }
+      </div>
+    </div>
+
+    <div class="fixed w-screen h-screen">
+      <div class="bg-image-color-hue"></div>
+      <img src="/Background.png" class="object-cover w-screen h-screen" />
+    </div>
+
+    <div class="nav-container">
+      <Header />
+    </div>
+    <slot />
+  </body>
+</html>
+
+<script>
+  import gsap from "gsap";
+  import SplitText from "gsap/SplitText";
+  window.gsap = gsap;
+  window.splitText = SplitText;
+
+  let loadingTimeout;
+  const loadingScreen = document.getElementById("loading-screen");
+  const introText = document.querySelector("div.jstr-intro-text");
+  if (loadingTimeout) {
+    clearTimeout(loadingTimeout);
+  }
+
+  const splittedIntroText = SplitText.create(introText, {
+    type: "chars, lines",
+    mask: "lines",
+  });
+
+  gsap.fromTo(splittedIntroText.chars, { y: 100 }, { y: 0, stagger: 0.03, ease: "power3.inOut" });
+  loadingTimeout = setTimeout(() => {
+    loadingScreen?.classList.add("active");
+  }, 1000);
+</script>
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+  }
+</style>

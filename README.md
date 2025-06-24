@@ -2,7 +2,7 @@
 
 Beautifully crafted website template.
 
-![Screenshot]()
+![Screenshot](https://raw.githubusercontent.com/noureddein-al-shawwa/jstr-template/refs/heads/main/screenshot.jpeg)
 
 **Main Features**
 
